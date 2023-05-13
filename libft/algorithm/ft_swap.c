@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zh <zshahin@student.42wolfsburg.de>        +#+  +:+       +#+        */
+/*   By: zeyad <zeyad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/16 11:50:27 by zh                #+#    #+#             */
-/*   Updated: 2022/12/16 16:23:51 by zh               ###   ########.fr       */
+/*   Created: 2023/03/19 12:39:04 by zeyad             #+#    #+#             */
+/*   Updated: 2023/03/19 12:42:24 by zeyad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+int	ft_swap(void *it1, void *it2, int size)
 {
-	while (lst && lst->next)
-		lst = lst->next;
-	return (lst);
+	int		i;
+	char	temp;
+
+	i = -1;
+	while (++i < size)
+	{
+		temp = *(char *)(it1 + i);
+		*(char *)(it1 + i) = *(char *)(it2 + i);
+		*(char *)(it2 + i) = temp;
+	}
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: zeyad <zeyad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 20:28:05 by zh                #+#    #+#             */
-/*   Updated: 2022/12/27 13:43:24 by zeyad            ###   ########.fr       */
+/*   Updated: 2023/03/19 16:42:46 by zeyad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ void			ft_putendl_fd(char *s, int fd);
 
 void			ft_putnbr_fd(int n, int fd);
 
+//linked list stuff
 t_list			*ft_lstnew(void *content);
 
 void			ft_lstadd_front(t_list **lst, t_list *new);
@@ -110,11 +111,18 @@ void			ft_lstdelone(t_list *lst, void (*del)(void*));
 void			ft_lstclear(t_list **lst, void (*del)(void*));
 
 void			ft_lstiter(t_list *lst, void (*f)(void *));
+
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));
 
+void			ft_lstpop_front(t_list	**lst);
+
+void			ft_lstpop_back(t_list	**lst);
+
+//get next line stuff
 char			*get_next_line(int fd);
 
+//printf 
 int				ft_printf(const char *format, ...);
 
 char			*ft_utoa_radix(unsigned long int num, char *radix);
@@ -124,4 +132,11 @@ int				ft_min(int x, int y);
 int				ft_max(int x, int y);
 
 char			*ft_concat(int n, ...);
+
+//algorithm
+
+int				ft_swap(void *it1, void *it2, int size);
+
+int				ft_reverse(void *start, void *end, int size);
+
 #endif

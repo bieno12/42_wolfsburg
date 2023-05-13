@@ -6,7 +6,7 @@
 /*   By: zeyad <zeyad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 17:33:41 by zh                #+#    #+#             */
-/*   Updated: 2022/12/25 17:44:33 by zeyad            ###   ########.fr       */
+/*   Updated: 2023/01/31 15:53:53 by zeyad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 //returns 0 if newline wasn't found
 
-static char	*concat(t_slist *lst)
+static char	*concat(t_tlist *lst)
 {
 	int		size;
 	int		i;
 	char	*string;
-	t_slist	*node;
+	t_tlist	*node;
 
 	size = 0;
 	node = lst;
@@ -90,7 +90,7 @@ int	create_str(char *dest, char *buffer, int n)
 	return (flag);
 }
 
-static char	*get_fd_buffer(int fd, t_slist **files_buf)
+static char	*get_fd_buffer(int fd, t_tlist **files_buf)
 {
 	if (!*files_buf)
 	{
@@ -115,9 +115,9 @@ static char	*get_fd_buffer(int fd, t_slist **files_buf)
 
 char	*get_next_line(int fd)
 {
-	static t_slist	*files_buf;
+	static t_tlist	*files_buf;
 	char			*buffer;
-	t_slist			*buffers;
+	t_tlist			*buffers;
 	char			*new_buffer;
 	int				n;
 

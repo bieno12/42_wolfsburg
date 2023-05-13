@@ -6,7 +6,7 @@
 /*   By: zeyad <zeyad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 17:34:18 by zh                #+#    #+#             */
-/*   Updated: 2022/12/25 17:43:33 by zeyad            ###   ########.fr       */
+/*   Updated: 2023/01/31 15:52:57 by zeyad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,19 @@ typedef struct s_list
 	int				fd;
 	char			*content;
 	struct s_list	*next;
-}					t_slist;
+}					t_tlist;
 
 char	*get_next_line(int fd);
 
-t_slist	*ft_lstnw(void *content);
+t_tlist	*ft_lstnw(void *content);
 
-void	ft_lstdel(int fd, t_slist **lst);
+void	ft_lstdel(int fd, t_tlist **lst);
 
-void	ft_lstadd_bck(t_slist **lst, t_slist *ne);
+void	ft_lstadd_bck(t_tlist **lst, t_tlist *new);
 
-int		ft_alloc_creat(t_slist *lst, char **new_buffer, char **buffer, int n);
+int		ft_alloc_creat(t_tlist *lst, char **new_buffer, char **buffer, int n);
 
-void	ft_lstclr(t_slist **lst, void (*del)(void*));
+void	ft_lstclr(t_tlist **lst, void (*del)(void*));
 
 void	*ft_mmcpy(void *dest, const void *src, size_t n);
 

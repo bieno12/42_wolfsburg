@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zh <zshahin@student.42wolfsburg.de>        +#+  +:+       +#+        */
+/*   By: zeyad <zeyad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/16 11:24:15 by zh                #+#    #+#             */
-/*   Updated: 2022/12/16 15:44:34 by zh               ###   ########.fr       */
+/*   Created: 2022/12/23 11:31:24 by zh                #+#    #+#             */
+/*   Updated: 2022/12/27 11:47:21 by zeyad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-t_list	*ft_lstnew(void *content)
+# include "../libft.h"
+# include "parser/parser_consts.h"
+
+# include <stdarg.h>
+# define STDOUT 1
+
+struct s_placeholder
 {
-	t_list	*new_node;
+	int	flags;
+	int	width;
+	int	precision;
+	int	specifier;
+};
 
-	new_node = (t_list *)malloc(sizeof(t_list));
-	if (!new_node)
-		return (0);
-	new_node->content = content;
-	new_node->next = NULL;
-	return (new_node);
-}
+#endif

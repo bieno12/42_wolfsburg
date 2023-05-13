@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zeyad <zeyad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/23 11:31:24 by zh                #+#    #+#             */
-/*   Updated: 2022/12/27 11:47:21 by zeyad            ###   ########.fr       */
+/*   Created: 2022/12/16 11:50:27 by zh                #+#    #+#             */
+/*   Updated: 2023/03/19 16:21:08 by zeyad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "../libft.h"
 
-# include "libft/libft.h"
-# include "parser/parser_consts.h"
-
-# include <stdarg.h>
-# define STDOUT 1
-
-struct s_placeholder
+t_list	*ft_lstlast(t_list *lst)
 {
-	int	flags;
-	int	width;
-	int	precision;
-	int	specifier;
-};
-
-#endif
+	while (lst && lst->next)
+		lst = lst->next;
+	return (lst);
+}

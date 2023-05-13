@@ -6,17 +6,17 @@
 /*   By: zeyad <zeyad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 17:33:45 by zh                #+#    #+#             */
-/*   Updated: 2022/12/25 17:44:26 by zeyad            ###   ########.fr       */
+/*   Updated: 2023/01/31 15:52:56 by zeyad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 #include <stdio.h>
 
-void	ft_lstdel(int fd, t_slist **lst)
+void	ft_lstdel(int fd, t_tlist **lst)
 {
-	t_slist	*temp;
-	t_slist	*current;
+	t_tlist	*temp;
+	t_tlist	*current;
 
 	if ((*lst)->fd == fd)
 	{
@@ -40,11 +40,11 @@ void	ft_lstdel(int fd, t_slist **lst)
 	}
 }
 
-t_slist	*ft_lstnw(void *content)
+t_tlist	*ft_lstnw(void *content)
 {
-	t_slist	*new_node;
+	t_tlist	*new_node;
 
-	new_node = (t_slist *)malloc(sizeof(t_slist));
+	new_node = (t_tlist *)malloc(sizeof(t_tlist));
 	if (!new_node)
 		return (0);
 	new_node->content = content;
@@ -52,7 +52,7 @@ t_slist	*ft_lstnw(void *content)
 	return (new_node);
 }
 
-int	ft_alloc_creat(t_slist *lst, char **new_buffer, char **buffer, int n)
+int	ft_alloc_creat(t_tlist *lst, char **new_buffer, char **buffer, int n)
 {
 	*new_buffer = malloc(n + 1);
 	n = create_str(*new_buffer, *buffer, n);
@@ -62,10 +62,10 @@ int	ft_alloc_creat(t_slist *lst, char **new_buffer, char **buffer, int n)
 	return (n);
 }
 
-void	ft_lstclr(t_slist **lst, void (*del)(void*))
+void	ft_lstclr(t_tlist **lst, void (*del)(void*))
 {
-	t_slist	*nxt;
-	t_slist	*current;
+	t_tlist	*nxt;
+	t_tlist	*current;
 
 	current = *lst;
 	while (current)

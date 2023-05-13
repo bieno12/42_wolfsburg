@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_reverse.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zh <zshahin@student.42wolfsburg.de>        +#+  +:+       +#+        */
+/*   By: zeyad <zeyad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/16 11:52:51 by zh                #+#    #+#             */
-/*   Updated: 2022/12/16 14:23:50 by zh               ###   ########.fr       */
+/*   Created: 2023/03/19 13:19:59 by zeyad             #+#    #+#             */
+/*   Updated: 2023/03/19 13:36:46 by zeyad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+int	ft_reverse(void *start, void *end, int size)
 {
-	if (*lst)
-		ft_lstlast(*lst)->next = new;
-	else
-		*lst = new;
+	end -= size;
+	while (start < end)
+	{
+		ft_swap(start, end, size);
+		start += size;
+		end -= size;
+	}
+	return (1);
 }
